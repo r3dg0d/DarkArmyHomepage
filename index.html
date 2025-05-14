@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Army Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #242424;
+            color: #ff4040;
+            font-family: 'Courier New', Courier, monospace;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        a {
+            color: #ff4040;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-menu {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .nav-menu a {
+            display: block;
+            color: #ff4040;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px 0;
+            text-transform: lowercase;
+        }
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+        .manifesto {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 18px;
+            text-transform: lowercase;
+        }
+        .footer-text {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .footer-right {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        canvas {
+            border: 2px solid #ff4040;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-menu">
+            <a href="xmr.html">xmr</a>
+            <a href="rat.html">rat</a>
+            <a href="shop.html">shop</a>
+            <a href="virusdb.html">virusdb</a>
+        </div>
+        <div class="manifesto"><a href="manifesto.html">manifesto</a></div>
+        <canvas id="skullCanvas" width="300" height="400"></canvas>
+        <div class="footer-text">
+            WE ARE DARK ARMY. WE ARE EVIL IN NATURE<br>
+            WE DO NOT FORGIVE. WE DO NOT FORGET.<br>
+            EXPECT US.
+        </div>
+        <div class="footer-right"><a href="about.html">WHO WE ARE</a></div>
+    </div>
+    <script>
+        // Get the canvas element
+        const canvas = document.getElementById('skullCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Create an image object
+        const img = new Image();
+        img.src = 'images/darkarmy.png';
+
+        // Draw the image on the canvas once it loads
+        img.onload = function() {
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        };
+    </script>
+</body>
+</html>
